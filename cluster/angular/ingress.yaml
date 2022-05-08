@@ -18,4 +18,7 @@ spec:
             name: angular
             port:
               number: 80
-  
+  tls: # < placing a host in the TLS config will determine what ends up in the cert's subjectAltNames
+  - hosts:
+    - app.mhasnain.dev
+    secretName: angular-cert
