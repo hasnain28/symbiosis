@@ -1,0 +1,50 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: angular
+  namespace: angular
+spec:
+  interval: 2m
+  chart:
+    spec:
+      chart: application
+      version: '1.2.0'
+      sourceRef:
+        kind: HelmRepository
+        name: stakater
+        namespace: flux-system
+  values:
+    replicaCount: 2
+    applicationName: "angular"
+    labels:
+      group: angular
+      team: hasnain
+            
+    deployment:
+      enabled: true
+      replicas: 2
+      image: 
+        repository: hasnainzaib/my-angular
+        tag: latest
+        containerPort: 80
+      
+      readinessProbe:
+        httpGet:
+          path: '/index.html'
+          port: 80
+
+      livenessProbe:
+        httpGet:
+          path: '/index.html'
+          port: 80
+
+    rbac:
+      serviceAccount:
+        enabled: true
+
+    service:
+      ports:
+        - port: 80
+          name: http
+          protocol: TCP
+          targetPort: 80

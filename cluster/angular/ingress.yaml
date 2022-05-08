@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: angular
+  namespace: angular
+  annotations: 
+    cert-manager.io/cluster-issuer: stagging-cluster-issuer 
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: app.mhasnain.dev
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: angular
+            port:
+              number: 80
+  
