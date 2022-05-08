@@ -4,7 +4,7 @@ metadata:
   name: angular
   namespace: angular
   annotations: 
-    cert-manager.io/cluster-issuer: production-cluster-issuer 
+    cert-manager.io/cluster-issuer: staging-cluster-issuer 
 spec:
   ingressClassName: nginx
   rules:
