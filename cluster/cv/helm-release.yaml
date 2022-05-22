@@ -25,7 +25,7 @@ spec:
       replicas: 2
       image: 
         repository: hasnainzaib/cv
-        tag: 0.0.3
+        tag: 0.0.4
         containerPort: 80
       
       readinessProbe:
