@@ -19,29 +19,24 @@ spec:
     labels:
       group: cv
       team: hasnain
-            
     deployment:
       enabled: true
       replicas: 2
-      image: 
+      image:
         repository: hasnainzaib/cv
-        tag: 0.0.6
+        tag: 0.0.7
         containerPort: 80
-      
       readinessProbe:
         httpGet:
           path: '/index.html'
           port: 80
-
       livenessProbe:
         httpGet:
           path: '/index.html'
           port: 80
-
     rbac:
       serviceAccount:
         enabled: true
-
     service:
       ports:
         - port: 80
