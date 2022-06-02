@@ -24,7 +24,7 @@ spec:
       replicas: 2
       image:
         repository: hasnainzaib/cv
-        tag: "sha-8a9855a"
+        tag: "sha-ca860a9"
         containerPort: 80
       readinessProbe:
         httpGet:
