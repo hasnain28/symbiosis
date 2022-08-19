@@ -14,9 +14,9 @@ spec:
         name: ingress-nginx
         namespace: flux-system
   values:
-    controller: 
-      extraArgs: 
-        publish-status-address: 188.40.172.121
+    # controller: 
+    #   extraArgs: 
+    #     publish-status-address: 188.40.172.121
     fullnameOverride: ingress-nginx
     publishService:
       enabled: false
