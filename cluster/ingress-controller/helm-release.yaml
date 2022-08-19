@@ -18,3 +18,5 @@ spec:
       extraArgs: 
         publish-status-address: 188.40.172.121
     fullnameOverride: ingress-nginx
+    external:
+      enabled: false
